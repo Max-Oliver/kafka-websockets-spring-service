@@ -1,0 +1,7 @@
+###
+POST http://localhost:8080/v1/kafka/events
+Content-Type: application/json
+
+{
+    "message": "Create Event from Api POST"
+}

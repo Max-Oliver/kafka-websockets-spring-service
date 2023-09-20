@@ -1,0 +1,7 @@
+###
+POST http://localhost:8080/v1/kafka/notifications
+Content-Type: application/json
+
+{
+    "message": "Create Notification from Api POST"
+}
