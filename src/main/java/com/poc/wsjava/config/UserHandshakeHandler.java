@@ -19,14 +19,6 @@ public class UserHandshakeHandler extends DefaultHandshakeHandler {
                                       WebSocketHandler wsHandler,
                                       Map<String, Object> attributes) {
 
-        // ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) request;
-        // HttpServletRequest httpServletRequest = servletRequest.getServletRequest();
-        // String userId = httpServletRequest.getQueryString().split("=")[2];
-
-        // if(userId.equals("userId-1")) {
-        //     logger.info("Valid User - User ID '{}': ", userId);
-        // }
-
         String randomId = UUID.randomUUID().toString();
         logger.info("New Ws User ID '{}'... ", randomId);
         return new UserPrincipal(randomId);

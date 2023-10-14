@@ -29,7 +29,8 @@ public class MessageController {
 
     @MessageMapping("/custom-message")
     @SendToUser("/topic/custom-messages")
-    public ResponseMessage getCustomMessage(final Message message, @Header(name = "userId") String userId, // Se puede obtener el header
+    public ResponseMessage getCustomMessage(final Message message,
+                                            @Header(name = "userId") String userId, // Se puede obtener el header
                                             final Principal principal) throws InterruptedException {
         Thread.sleep(1000);
         notificationService.sendCustomNotification(principal.getName());

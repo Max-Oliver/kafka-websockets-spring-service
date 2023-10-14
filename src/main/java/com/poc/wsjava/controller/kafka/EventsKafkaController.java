@@ -12,10 +12,11 @@ import java.security.Principal;
 @RequestMapping("/v1/kafka/events")
 public class EventsKafkaController {
     @Autowired
-    private KafkaTemplate<String, EventMessage> kafkaTemplate;
+    private KafkaTemplate<String, Object> kafkaTemplate;
 
     @PostMapping()
     public void produceAnEvent(@RequestBody EventMessage event) {
+
         kafkaTemplate.send("events", event);
     }
 

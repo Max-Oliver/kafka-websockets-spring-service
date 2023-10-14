@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/kafka/notifications")
 public class NotificationKafkaController {
     @Autowired
-    private  KafkaTemplate<String, EventMessage> kafkaTemplate;
-
+    private  KafkaTemplate<String, Object> kafkaTemplate;
 
     @PostMapping()
-    //public void produceAnNotification(@RequestBody KafkaMessageRequest request){
-        //kafkaTemplate.send("notifications", request.message());
-    public void produceAnNotification(@RequestBody EventMessage event){
+    public void produceAnNotification(@RequestBody EventMessage event) {
         kafkaTemplate.send("notifications", event);
     }
 

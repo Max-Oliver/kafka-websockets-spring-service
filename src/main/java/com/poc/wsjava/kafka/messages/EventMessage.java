@@ -49,4 +49,15 @@ public class EventMessage {
     }
 
 
+    @Override
+    public String toString() {
+        return String.format("""
+                \n User: {
+                          id_user:  %s,
+                          username: %s,
+                          eventDetail: %s
+                          typeEvent: %s
+                       }
+                """, idUser,username,eventDetail,typeEvent );
+    }
 }
