@@ -19,8 +19,7 @@ $(document).ready(function() {
 });
 
 function connect() {
-    var userId = 'userId-1'
-    //var socket = new SockJS('/our-websocket?query=user_id='+ userId);
+
     var socket = new SockJS('/our-websocket');
     stompClient = Stomp.over(socket);
 
@@ -34,7 +33,7 @@ function connect() {
 
         stompClient.subscribe('/user/topic/custom-messages',
         function (message) {
-            showMessage(JSON.parse(message.body).content);
+           showMessage(JSON.parse(message.body).content);
         });
 
         stompClient.subscribe('/topic/global-notifications', function (message) {
@@ -43,8 +42,8 @@ function connect() {
         });
 
         stompClient.subscribe('/user/topic/custom-notifications', function (message) {
-            notificationCount = notificationCount + 1;
-            updateNotificationDisplay();
+        notificationCount = notificationCount + 1;
+        updateNotificationDisplay();
         });
     });
 }
@@ -60,7 +59,7 @@ function sendMessage() {
 
 function sendPrivateMessage() {
     console.log("Sending custom message");
-    stompClient.send("/ws/custom-message", { userId: 'userId-1' }, JSON.stringify({'messageContent': $("#custom-message").val()}));
+    stompClient.send("/ws/custom-message", JSON.stringify({'messageContent': $("#custom-message").val()}));
 }
 
 function updateNotificationDisplay() {

@@ -22,17 +22,6 @@
             </form>
         </div>
     </div>
-    <div class="row" style="margin-top: 10px">
-        <div class="col-md-12">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="custom-message">Custom Message</label>
-                    <input type="text" id="custom-message" class="form-control" placeholder="Enter your message here...">
-                </div>
-                <button id="send-custom" class="btn btn-default" type="button">Send Custom Message</button>
-            </form>
-        </div>
-    </div>
     <div class="row">
         <div class="col-md-12">
             <table id="message-history" class="table table-striped">
@@ -40,13 +29,8 @@
                 <tr>
                     <th>Messages
                         <span
-                                id="notifications"
-                                style="
-                                    color: white;
-                                    background-color: red;
-                                    padding-left: 15px;
-                                    padding-right: 15px;">
-                            </span>
+                                id="notifications">
+                        </span>
                     </th>
                 </tr>
                 </thead>
@@ -55,6 +39,35 @@
             </table>
         </div>
     </div>
+
+    <style>
+    /* Style the row */
+    .row {
+        margin: 20px;
+    }
+
+    /* Style the table */
+    #message-history {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    /* Style the table headers */
+    #message-history th {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Style the notifications span */
+    #notifications {
+        color: white;
+        background-color: red;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    </style>
 </div>
 </body>
 </html>

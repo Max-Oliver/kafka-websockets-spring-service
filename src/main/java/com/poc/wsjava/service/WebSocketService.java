@@ -11,7 +11,6 @@ public class WebSocketService {
     private final SimpMessagingTemplate msjTemplate;
     private final NotificationService notificationService;
 
-    @Autowired
     public WebSocketService(SimpMessagingTemplate msjTemplate, NotificationService notificationService){
         this.msjTemplate = msjTemplate;
         this.notificationService = notificationService;

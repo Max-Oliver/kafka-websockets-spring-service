@@ -3,14 +3,33 @@ spring:
     ansi:
       enabled: ALWAYS
   kafka:
-    consumer:
-      group-id: tpd-loggers
-      auto-offset-reset: earliest
     # change this property if you are using your own
     # Kafka cluster or your Docker IP is different
     bootstrap-servers: localhost:9092
+    #consumer:
+      #auto-offset-reset: earliest
 
 tpd:
   topic-name: payload-event
+  partitions: 3
   messages-per-request: 10
 
+topic:
+  create:
+    partition: 3
+    name: payload-event
+
+ms-consumer-group:
+  partitions: 0,1,2
+  group-id: ms_group_zero_one_two
+
+groups:
+  zero:
+    group-id: group_id_zero
+    partition: 0
+  one:
+    group-id: group_id_one
+    partition: 1
+  two:
+    group-id: group_id_two
+    partition: 2
